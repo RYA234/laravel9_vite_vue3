@@ -1,0 +1,57 @@
+version: '3'
+
+services:
+  app:
+    container_name: todo-app
+    build:
+      context: ./docker/php/
+      dockerfile: Dockerfile
+    environment:
+      NODE_OPTIONS: --openssl-legacy-provider
+    links:
+      - "postgres"
+      - "redis"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
+
+      
+  
+  nginx:
+    container_name: todo-nginx
+    build:
+      context: ./docker/nginx/
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    links:
+      - app  
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/nginx/develop_nginx.conf:/etc/nginx/nginx.conf  
+
+  postgres:
+    image: postgres:11.7
+    container_name: todo-postgres-db
+    environment:
+      TZ: 'Asia/Tokyo'
+      POSTGRES_USER: "todo_user"
+      POSTGRES_PASSWORD: "todo_pass"
+      POSTGRES_DB: "todo"
+      PGDATA: /var/lib/postgresql/data/pgdata
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+    volumes:
+      - pgsql-data:/var/lib/postgresql/data
+      # - ./docker/postgres/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      # - ./docker/postgres/postgresql.auto.conf:/var/lib/postgresql/data/postgresql.auto.conf
+    ports:
+      - 5432:5432
+
+  redis:
+    image: redis:latest
+    container_name: etab-redis
+    ports:
+      - "16379:6379"
+      
+volumes:
+  pgsql-data:
