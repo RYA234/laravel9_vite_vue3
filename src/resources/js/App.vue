@@ -14,7 +14,15 @@ const count = ref(0)
 function increment(){
     count.value++;
 }
+
+// step5
+const text = ref('')
+
+// step6
+
+// step7
 </script>
+
 
 <template>
 <!-- step2 -->
@@ -22,11 +30,21 @@ function increment(){
   <h1>{{ message }}</h1>
   <p>Count is: {{ counter.count }}</p>
 
-<!--  step3 -->
-<div v-bind:class="titleClass">make me red</div>
+    <!--  step3 -->
+    <div v-bind:class="titleClass">make me red</div>
 
-<!-- step4 -->
-<button @click="increment">{{ count }}</button>
+    <!-- step4 -->
+    <button @click="increment">{{ count }}</button>
+
+    <!-- step5 -->
+    <br/><br/><br/>
+    step5<br/>
+    <input v-model="text" placeholder="Type here">
+    <p>{{ text }}</p>
+    <!-- step6 -->
+
+    <!-- step7 -->
+
 </template>
 
 <style>
