@@ -19,7 +19,10 @@ function increment(){
 const text = ref('')
 
 // step6
-
+const awesome = ref(true)
+function toggle() {
+  awesome.value = !awesome.value;
+}
 // step7
 </script>
 
@@ -42,7 +45,9 @@ const text = ref('')
     <input v-model="text" placeholder="Type here">
     <p>{{ text }}</p>
     <!-- step6 -->
-
+    <button @click="toggle">toggle</button>
+    <h1 v-if="awesome">Vue is awesome!</h1>
+    <h1 v-else>Oh no 😢</h1>
     <!-- step7 -->
 
 </template>
