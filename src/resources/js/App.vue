@@ -8,6 +8,12 @@ console.log(message);
 
 // step3
 const titleClass = ref('title')
+
+// step4
+const count = ref(0)
+function increment(){
+    count.value++;
+}
 </script>
 
 <template>
@@ -19,6 +25,8 @@ const titleClass = ref('title')
 <!--  step3 -->
 <div v-bind:class="titleClass">make me red</div>
 
+<!-- step4 -->
+<button @click="increment">{{ count }}</button>
 </template>
 
 <style>
