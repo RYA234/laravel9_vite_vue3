@@ -69,6 +69,15 @@ docker-compose exec app bash
 # Open Server  --port is Option
 php artisan serve --port=8080
 
+
+docker exec app bash php artisan serve --port=8080
+docker exec app -it bash npm run dev --host
+docker-compose exec -it app bash npm run update
+docker-compose exec app bash npm run test
+
+
+
+
 # Open Under Address
 http://127.0.0.1:8080/
 ```

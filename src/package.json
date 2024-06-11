@@ -7,7 +7,8 @@
         "preview": "vite preview",
         "": "https://laracasts.com/discuss/channels/laravel/npm-run-dev-allways-start-vite",
         "": "更新する時はターミナルrボタンを押す。",
-        "dev-vite": "npm run dev & vite"
+        "dev-vite": "npm run dev & vite",
+        "test": "vitest"
     },
     "devDependencies": {
         "@vitejs/plugin-vue": "^4.5.0",
@@ -19,6 +20,7 @@
     },
     "dependencies": {
         "vue": "^3.2.36",
-        "vue-loader": "^17.3.1"
+        "vue-loader": "^17.3.1",
+        "vitest": "^0.34.6"
     }
 }
