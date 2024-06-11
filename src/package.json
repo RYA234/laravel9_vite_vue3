@@ -5,22 +5,27 @@
         "build": "vite build",
         "watch": "npm run development -- --watch",
         "preview": "vite preview",
-        "": "https://laracasts.com/discuss/channels/laravel/npm-run-dev-allways-start-vite",
         "": "更新する時はターミナルrボタンを押す。",
         "dev-vite": "npm run dev & vite",
         "test": "vitest"
     },
     "devDependencies": {
+        "@testing-library/jest-dom": "^6.4.6",
+        "@testing-library/user-event": "^14.5.1",
+        "@testing-library/vue": "^8.0.1",
         "@vitejs/plugin-vue": "^4.5.0",
+        "@vue/eslint-config-prettier": "^8.0.0",
+        "@vue/test-utils": "^2.4.1",
         "axios": "^1.1.2",
+        "jsdom": "^24.1.0",
         "laravel-vite-plugin": "^0.7.2",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "vitest": "^0.34.6",
         "vue": "^3.2.36",
-        "vue-loader": "^17.3.1",
-        "vitest": "^0.34.6"
+        "vue-loader": "^17.3.1"
     }
 }
