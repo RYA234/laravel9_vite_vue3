@@ -3,7 +3,7 @@ import { reactive, ref } from 'vue'
 
 // step2
 const counter = reactive({ count: 0 })
-const message = ref('Hello World!')
+const message = ref('Ho Waaorld!')
 console.log(message);
 
 // step3
