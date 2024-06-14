@@ -1,33 +1,26 @@
 <script setup>
-import { ref } from 'vue';
-const disabled = ref(true)
+import { computed,ref} from 'vue';
+// const disabled = ref(true)
 const password = ref('')
 const passwordRepeat = ref('')
 
-function onChangePassword(event) {
-    password.value = event.target.value;
-    disabled.value = password.value !== passwordRepeat.value;
-    console.log(disabled.value)
-}
+const isDisabled = computed(() => {
+    return password.value || passwordRepeat.value ? password.value !== passwordRepeat.value : true
+})
 
-function onChangePasswordRepeat(event) {
-    passwordRepeat.value = event.target.value;
-    disabled.value = password.value !== passwordRepeat.value;
-    console.log(disabled.value)
-}
 </script>
 
 <template>
 <h1>SignUp</h1>
 <div>
     <label for="password">Password</label>
-    <input type="password" id="password" @input="onChangePassword"/>
+    <input type="password" id="password" v-model="password"/>
 </div>
 <div>
     <label for="passwordRepeat">PasswordRepeat</label>
-    <input type="password" id="passwordRepeat" @input="onChangePasswordRepeat"/>
+    <input type="password" id="passwordRepeat" v-model="passwordRepeat"/>
 </div>
-    <button :disabled="disabled" >Sign Up</button>
+    <button :disabled=" isDisabled" >Sign Up</button>
 
 
 </template>
