@@ -72,13 +72,10 @@ describe('ユーザー作成API',()=>{
 
         await user.click(button);
 
-        expect(axios.post).toHaveBeenCalledWith('/api/v1/user',{
+        expect(axios.post).toHaveBeenCalledWith('/api/v1/users',{
             username:'user1',
             email:'user@mail.com',
             password:'P4ssword'
         })
-
     })
-
-
 })
