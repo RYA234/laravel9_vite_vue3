@@ -1,10 +1,11 @@
 # Develop Environment
-a
+
 Name | Version | Description
 ----|------|----
 Windows|11|OS
 WSL(ubuntu)|2|Linux terminal
 Docker|24.0.6|container-based virtualization
+codeSpaces
 
 # Environment in Docker
 
@@ -12,7 +13,7 @@ Name | Version | Description
 ----|------|----
 PHP | 8.1 |Programming Language for Backend
 Laravel|9.19|Web Framework
-commposer|2.9.14|Dependency Manager for PHP 
+commposer|2.9.14|Dependency Manager for PHP
 npm|9.6.7|Package Manager for JavaScript
 Vue.js|3.2.46| Frontend Framework
 Vite|4.0.0|Building tool for Frontend
@@ -66,14 +67,20 @@ npm run dev
 
 # Open new terminal,then Enter app container
 docker-compose exec app bash
+
 # Open Server  --port is Option
 php artisan serve --port=8080
 
 
-docker exec app bash php artisan serve --port=8080
+docker exec app bash　-c "php artisan serve --port=8080
 docker exec app -it bash npm run dev --host
-docker-compose exec -it app bash npm run update
-docker-compose exec app bash npm run test
+
+一行で実行する
+docker-compose exec -it app bash -c  "npm run dev-vite "
+
+docker-compose exec -it app bash -c  "php artisan serve --port=8080"
+docker-compose exec -it app bash -c  "npm run test"
+
 
 
 
@@ -96,4 +103,6 @@ http://127.0.0.1:8080/
 https://readouble.com/laravel/9.x/ja/vite.html
 
 https://cyublog.com/articles/php-ja/jp-docker-laravel9-vite/
+
+
 

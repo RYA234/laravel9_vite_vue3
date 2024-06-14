@@ -10,6 +10,5 @@
     </head>
     <body>
         <div id="signup"></div>
-        <div id="app"></div>
     </body>
 </html>
