@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-
+use App\Models\Post;
 class ExampleTest extends TestCase
 {
     /**
@@ -53,5 +53,10 @@ class ExampleTest extends TestCase
         $response = $this->get('hello');
         $response->assertStatus(200);
         $response->assertSee('world');
+    }
+
+    public function test_factoryのテスト(){
+        $post = Post::factory()->create();
+        $this->dumpdb();
     }
 }

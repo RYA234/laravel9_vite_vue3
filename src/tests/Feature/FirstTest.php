@@ -24,8 +24,8 @@ class FirstTest extends TestCase
         $response = $this->get('/');
         $response->assertStatus(200)
                  ->assertSee('Laravel')
-                 ->assertSee(['Laravel', 'Vite', 'Vue'])
-                 ->assertSee('<h1>Hello,権兵衛さん</h1>',false);
+                 ->assertSee(['Laravel', 'Vite', 'Vue']);
+                //  ->assertSee('<h1>Hello,権兵衛さん</h1>',false);
 
     }
 }

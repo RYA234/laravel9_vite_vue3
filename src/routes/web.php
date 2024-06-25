@@ -26,5 +26,8 @@ Route::get('/sample', function () {
 });
 
 use App\Http\Controllers\HelloController; // Import the HelloController class
+use App\Http\Controllers\UserController;
 
 Route::get('hello',[HelloController::class,'index']);
+Route::get('users',[UserController::class,'index']);
+
