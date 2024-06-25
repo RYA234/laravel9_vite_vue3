@@ -18,4 +18,22 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+    protected function setUp(): void{
+        parent::setUp();
+        dump('setUp');
+    }
+
+    protected function tearDown():void{
+        parent::tearDown();
+        dump('tearDown');
+    }
+
+    public function test_sample1(): void
+    {
+        $response = $this->get('/');
+
+        dump('sample1');
+
+        $response->assertStatus(200);
+    }
 }
