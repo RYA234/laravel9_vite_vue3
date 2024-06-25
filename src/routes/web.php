@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +24,7 @@ Route::get('/greeting', function () {
 Route::get('/sample', function () {
     return view('sample');
 });
+
+use App\Http\Controllers\HelloController; // Import the HelloController class
+
+Route::get('hello',[HelloController::class,'index']);
