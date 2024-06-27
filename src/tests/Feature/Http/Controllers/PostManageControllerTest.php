@@ -106,4 +106,18 @@ class PostManageControllerTest extends TestCase
         $this->assertModelMissing($post);
 
     }
+
+    public function test_投稿一覧、本文でヒット(){
+        $me = $this->login();
+        Post::factory()->for($me)->createMany([
+            ['title' => '信長のタイトル', 'body' => '信長の本文'],
+            ['title' => '家康のタイトル', 'body' => '家康の本文'],
+        ]);
+
+        $response = $this->get('members/posts?kword=信長の本');
+        $response
+            ->assertOk()
+            ->assertSee('信長のタイトル')
+            ->assertDontSee('家康のタイトル');
+    }
 }
