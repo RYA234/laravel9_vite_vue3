@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
+use App\Models\User
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
@@ -53,6 +54,12 @@ abstract class TestCase extends BaseTestCase
         $this->beforeApplicationDestroyed(function () use ($db){
             dump($db->getQueryLog());
         });
+    }
+
+    protected function login($user = null){
+        $user ??= User::factory()->create();
+        $this->actingAs($user);
+        return $user;
     }
 }
 

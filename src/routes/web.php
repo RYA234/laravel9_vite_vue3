@@ -26,8 +26,19 @@ Route::get('/sample', function () {
 });
 
 use App\Http\Controllers\HelloController; // Import the HelloController class
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 Route::get('hello',[HelloController::class,'index']);
 Route::get('users',[UserController::class,'index']);
+Route::get('posts', [PostController::class, 'index']);
+
+Route::get('login', function () {
+    return 'ログイン画面';
+})->name('login');
+
+Route::middleware('auth')->group(function(){
+    Route::get('members',[MemberController::class, 'index']);
+});
 
