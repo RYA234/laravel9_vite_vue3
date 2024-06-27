@@ -29,6 +29,7 @@ use App\Http\Controllers\HelloController; // Import the HelloController class
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostManageController;
 
 Route::get('hello',[HelloController::class,'index']);
 Route::get('users',[UserController::class,'index']);
@@ -42,3 +43,8 @@ Route::middleware('auth')->group(function(){
     Route::get('members',[MemberController::class, 'index']);
 });
 
+Route::get('members/posts', [PostManageController::class, 'index'])->name('posts.index');
+Route::post('members/posts', [PostManageController::class, 'store'])->name('posts.store');
+Route::get('members/posts/{post}/edit', [PostManageController::class, 'edit'])->name('posts.edit');
+Route::put('members/posts/{post}', [PostManageController::class, 'update'])->name('posts.update');
+Route::delete('members/posts/{post}', [PostManageController::class, 'destroy'])->name('posts.destroy');

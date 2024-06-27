@@ -8,7 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 
-use App\Models\User
+use App\Models\User;
 abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
