@@ -48,6 +48,18 @@ class PostManageControllerTest extends TestCase
             array_merge($validData, ['user_id' => $me->id])
         );
     }
+    public function test_ブログ新規登録後、メッセージが表示される()
+    {
+        $me = $this->login();
+        $post = Post::factory()->for($me)->create();
+
+        $response = $this->withSession(['status' => 'ブログを登録しました。'])
+        ->get(route('posts.edit',$post));
+
+        $response
+        ->assertOk()
+        ->assertSee('ブログを登録しました。');
+    }
 
     public function test_自分のブログの編集画面は開ける()
     {
