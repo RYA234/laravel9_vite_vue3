@@ -1,5 +1,5 @@
 <script setup>
-import { reactive, ref } from 'vue'
+import { reactive, ref } from 'vue';
 
 // step2
 const counter = reactive({ count: 0 })
@@ -49,6 +49,7 @@ function toggle() {
     <h1 v-if="awesome">Vue is awesome!</h1>
     <h1 v-else>Oh no 😢</h1>
     <!-- step7 -->
+    <v-text-field label="Label"></v-text-field>
 
 </template>
 
