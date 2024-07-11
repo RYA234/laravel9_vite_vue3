@@ -47,15 +47,15 @@ function bubbleSort(array){
 }
 
 const validateInput = (array) => {
-    
+
 }
 
 </script>
 
 <template>
 <h1  class="d-flex justify-center mb-6  flex-row ">バブルソート</h1>
-    <v-app>
-        <v-main>
+
+
         <v-sheet class="d-flex justify-center mb-6 ">
             <!-- <label for="elementNumber">配列sの数</label>
             <div width="50px" height="60px">
@@ -84,10 +84,7 @@ const validateInput = (array) => {
                         <v-text-field  maxlength=3  max-width="100px" class="px-3" :value="output[3]" Disabled="true"></v-text-field>
                 </v-row>
                 <h1 class="d-flex justify-center mb-6  flex-row ">途中結果 commingsoon</h1>
-        </div>
-        </v-main>
-    </v-app>
-
+            </div>
 </template>
 
 

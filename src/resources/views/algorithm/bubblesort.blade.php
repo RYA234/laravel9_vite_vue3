@@ -21,6 +21,10 @@
         </style>
     </head>
     <body class="antialiased">
+        <v-app>
+            <v-main>
             <div id="bubbleSort"></div>
+            <v-main>
+        </v-app>
     </body>
 </html>

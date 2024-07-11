@@ -1,0 +1,22 @@
+
+状態
+
+テストするvueファイルの<template>に以下ファイルが
+含まれているとエラーになる。
+　laravelのbladenに<v-app> 
+ 上のレイヤーに書くことは解決咲く
+
+<v-app><v-main></v-main?</v-app>
+
+
+  console.log(wrapper.html())
+->
+-- 
+
+<Suspense> is an experimental feature and its API will likely change.
+<h1 class="d-flex justify-center mb-6 flex-row">バブルソート</h1>
+<div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr">
+  <div class="v-application__wrap">
+    <!---->
+  </div>
+</div>
