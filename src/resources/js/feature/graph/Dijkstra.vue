@@ -6,9 +6,10 @@
 import { ref } from 'vue';
     //
     /** p97 隣接行列を使った配列ダイクストラ法
-     * @param destination{Number}  目的値の番号
+     * @param destination{Number}  始点の番号
      * @param vertexCount{Number}  頂点の数
-     * @param edgeCount{Number}  辺の数
+     * @param edgeCount{Array}  辺
+     * @param goal{Number}　目標の番号
      * @return {Number} 最短経路のコスト
      */
     const  cal= (destination,vertexCount,edge,goal) =>{
